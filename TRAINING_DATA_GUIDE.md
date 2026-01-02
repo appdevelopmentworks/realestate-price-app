@@ -64,6 +64,10 @@ python src/prepare_training_data.py --input data/raw/Tokyo_20243_20252.csv
 
 必要なら `--encoding cp932` で明示指定できます。
 
+```bash
+python src/prepare_training_data.py --input data/raw/Tokyo_20222_20252.csv --encoding cp932
+```
+
 ### ① 前処理（学習データ作成）
 
 ```bash
