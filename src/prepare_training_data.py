@@ -19,7 +19,7 @@ QUARTER_MONTH = {
 
 
 def _detect_encoding(path: Path) -> str:
-    for enc in ("cp932", "shift_jis", "utf-8"):
+    for enc in ("cp932", "shift_jis", "utf-8-sig", "utf-8"):
         try:
             pd.read_csv(path, encoding=enc, nrows=1)
             return enc

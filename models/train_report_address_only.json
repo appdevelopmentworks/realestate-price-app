@@ -1,14 +1,14 @@
 {
   "data_path": "data/processed/mansion_train.csv",
-  "split_cutoff_date": "2022-12-26",
+  "split_cutoff_date": "2024-05-01",
   "counts": {
-    "train": 423,
-    "valid": 77
+    "train": 39002,
+    "valid": 28284
   },
   "metrics": {
-    "mae": 166669.17034467,
-    "mape_percent": 20.008980984857544,
-    "best_iteration": 1
+    "mae": 233250.07025380826,
+    "mape_percent": 22.30244365585875,
+    "best_iteration": 105
   },
   "model_path": "models\\model_address_only.joblib"
 }
