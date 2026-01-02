@@ -49,6 +49,21 @@ date,ward,age_years,area_m2,station_walk_min,far,bcr,lat,lon,price_total_yen
 
 ## 5. 学習の実行手順
 
+### 0) 実データCSVの取得と配置
+
+1. https://www.reinfolib.mlit.go.jp/realEstatePrices/ で「中古マンション等（区分所有）」を選んでCSVをダウンロード
+2. ダウンロードしたCSVをUTF-8に変換し、`data/raw/transactions_mansion.csv` として配置
+
+### 0-補足) 変換＋前処理を一括で行う方法
+
+`src/prepare_training_data.py` で、SJIS/UTF-8自動判定 → `transactions_mansion.csv` 保存 → 前処理まで実行できます。
+
+```bash
+python src/prepare_training_data.py --input data/raw/Tokyo_20243_20252.csv
+```
+
+必要なら `--encoding cp932` で明示指定できます。
+
 ### ① 前処理（学習データ作成）
 
 ```bash
@@ -80,4 +95,3 @@ python src/train_address_only.py
 - 実データを使う場合は **必ず上記の必須カラムを揃えて配置**してください。
 - サンプルデータはランダム生成のため精度評価には使えません。
 - 学習の評価指標は MAE（主）と MAPE（補助）です。
-
